@@ -1,0 +1,10 @@
+[build]
+target = "x86_64-unknown-linux-gnu"
+
+[unstable]
+build-std = ["core"]
+
+[target.'cfg(target_os = "linux")']
+rustflags = [
+    "-C", "link-args=-nostartfiles",
+]
